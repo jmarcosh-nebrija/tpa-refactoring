@@ -31,8 +31,7 @@ public class Customer {
         while (rentals.hasMoreElements()) {
             Rental each = (Rental) rentals.nextElement();
             //show figures for this rental
-            result += "\t" + each.getMovie().getTitle() + "\t" +
-                    String.valueOf(each.getCharge()) + "\n";
+            result += "\t" + each.getMovie().getTitle() + "\t" + String.valueOf(each.getCharge()) + "\n";
         }
 
         //add footer lines
@@ -84,8 +83,8 @@ public class Customer {
 
 Se añaden a la clase Customer tests las siguientes pruebas:
 
+
 ```
-**
     @Test
     void testHtmlStatement_NoRentals() {
         Customer customer = new Customer("John Doe");
@@ -137,5 +136,4 @@ Se añaden a la clase Customer tests las siguientes pruebas:
 
         assertEquals(expected, customer.htmlStatement());
     }
-**
 ```

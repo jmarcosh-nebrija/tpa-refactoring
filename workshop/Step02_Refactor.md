@@ -1,8 +1,11 @@
 ## Refactor 02: Renombrar variables
 
+Ahora que he dividido el método original en partes, puedo trabajar en ellas por separado. No me gustan algunos de 
+los nombres de las variables en amountFor() y este es un buen momento para cambiarlos.
+
 ### Se pide 
 
-Se pide hacer un Rename del nombre del argumento en amountFor():
+Se pide hacer un Rename del nombre del parámetro each en amountFor(Rental <b>each</b>):
 
 <pre>
 double amountFor(Rental <b>each</b>) {
@@ -55,10 +58,17 @@ double amountFor(Rental <b>aRental</b>) {
 }
 </pre>
 
+
 ### Pruebas
 
 No hay necesidad de hacer cambios en las pruebas, pero si hay que ejecutarlas!
 
-### Tip
+### Reflexión
+
+¿Vale la pena el esfuerzo de cambiar el nombre? Absolutamente. Un buen código debe comunicar lo que está
+haciendo claramente, y los nombres de las variables son clave para un código claro. Nunca tenga miedo de
+cambiar los nombres de las cosas para mejorar la claridad. Con buenas herramientas de búsqueda y reemplazo,
+por lo general no es difícil. Una escritura y pruebas rigurosas resaltarán cualquier cosa que se le escape. 
+Recuerde:
 
 > Any fool can write code that a computer can understand. Good programmers write code that humans can understand.

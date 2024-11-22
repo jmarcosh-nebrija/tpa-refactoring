@@ -5,11 +5,11 @@ pero no utiliza información del cliente.
 
 Esto inmediatamente hace que se sospeche que el método está en el objeto equivocado. 
 En la mayoría de los casos, un método debería estar en el objeto cuyos datos utiliza, 
-por lo que el método debería trasladarse al alquiler. Para ello, utilizo el refactor 
+por lo que el método debería trasladarse al alquiler (Rental). Para ello, utilizo el refactor 
 **Move Method** (en Intellij IDEA se llama "Move Instance Method"). Con esto, primero se copia el código 
 en el alquiler y se ajusta para que encaje en su nuevo hogar.
 
-Además, aplicamos otro refactor **Rename** para cambiar el nombre del método de amountFor() a getCharge().
+Además, aplicamos otro refactor **Rename** para **cambiar el nombre del método de amountFor() a getCharge()**.
 
 ### Resultado
 
@@ -46,12 +46,11 @@ public class Customer {
             frequentRenterPoints++;
 
             // add bonus for a two day new release rental
-            if ((each.getMovie().getPriceCode() == Movie.NEW_RELEASE)
-                    && each.getDaysRented() > 1) frequentRenterPoints++;
+            if ((each.getMovie().getPriceCode() == Movie.NEW_RELEASE) && each.getDaysRented() > 1) 
+                frequentRenterPoints++;
 
             //show figures for this rental
-            result += "\t" + each.getMovie().getTitle() + "\t" +
-                    String.valueOf(thisAmount) + "\n";
+            result += "\t" + each.getMovie().getTitle() + "\t" + String.valueOf(thisAmount) + "\n";
             totalAmount += thisAmount;
         }
 

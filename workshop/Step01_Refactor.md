@@ -1,4 +1,7 @@
-## Refactor 01: Extraer met3odo amountFor()
+## Refactor 01: Extraer metódo amountFor()
+
+Mi primer paso es encontrar un fragmento lógico de código y utilizar el método de extracción. Una parte obvia aquí 
+es la declaración switch. Parece que sería un buen fragmento para extraer en su propio método.
 
 ### Se pide 
 
@@ -35,12 +38,11 @@ public String statement() {
         frequentRenterPoints++;
 
         // add bonus for a two day new release rental
-        if ((each.getMovie().getPriceCode() == Movie.NEW_RELEASE)
-                && each.getDaysRented() > 1) frequentRenterPoints++;
+        if ((each.getMovie().getPriceCode() == Movie.NEW_RELEASE) && each.getDaysRented() > 1) 
+            frequentRenterPoints++;
 
         //show figures for this rental
-        result += "\t" + each.getMovie().getTitle() + "\t" +
-                String.valueOf(thisAmount) + "\n";
+        result += "\t" + each.getMovie().getTitle() + "\t" + String.valueOf(thisAmount) + "\n";
         totalAmount += thisAmount;
     }
 
@@ -68,12 +70,11 @@ public String statement() {
         frequentRenterPoints++;
 
         // add bonus for a two day new release rental
-        if ((each.getMovie().getPriceCode() == Movie.NEW_RELEASE)
-                && each.getDaysRented() > 1) frequentRenterPoints++;
+        if ((each.getMovie().getPriceCode() == Movie.NEW_RELEASE) && each.getDaysRented() > 1) 
+            frequentRenterPoints++;
 
         //show figures for this rental
-        result += "\t" + each.getMovie().getTitle() + "\t" +
-                String.valueOf(thisAmount) + "\n";
+        result += "\t" + each.getMovie().getTitle() + "\t" + String.valueOf(thisAmount) + "\n";
         totalAmount += thisAmount;
     }
 

@@ -1,14 +1,14 @@
 ## Refactor 05: Extracción de puntos de fidelización
 
-El siguiente paso es hacer algo similar a lo hecho hasta ahora cambios anteriores pero para los puntos de fidelidad. 
-Las reglas varían con la pelicula, aunque hay menos variación que con el cobro. Parece razonable poner la 
-responsabilidad en el arrendatario. 
-Primero debemos usar el método de extracción en la parte del código de puntos de arrendatario frecuente (en negrita):
+El siguiente paso es hacer algo similar a lo hecho hasta ahora en los cambios anteriores pero para los 
+puntos de fidelidad. Las reglas de los puntos de fidelidad varían con la pelicula, aunque hay menos variación 
+que con el cobro. Parece razonable poner la responsabilidad en el alquiler (Rental).
 
 ### Se pide
 
-Aplicar **Extract Method** al código que calcula los puntos de fidelización y después moverlo a la clase Rental. 
-Se requiere hacer ajustes manuales. 
+Aplicar **Extract Method** al código que calcula los puntos de fidelización y después moverlo a la clase Rental,
+usando **Move Method** ( hacerlo usando el refactor de Intellij IDEA que se llama "Move Instance Method" o a mano).
+Es posible que se necesiten hacer otros ajustes manuales. 
 
 <pre>
     public String statement() {
@@ -23,13 +23,12 @@ Se requiere hacer ajustes manuales.
             frequentRenterPoints++;
 
             // add bonus for a two day new release rental
-            if ((each.getMovie().getPriceCode() == Movie.NEW_RELEASE)
-                    && each.getDaysRented() > 1) frequentRenterPoints++;
+            if ((each.getMovie().getPriceCode() == Movie.NEW_RELEASE) && each.getDaysRented() > 1) 
+                frequentRenterPoints++;
             </b>
 
             //show figures for this rental
-            result += "\t" + each.getMovie().getTitle() + "\t" +
-                    String.valueOf(each.getCharge()) + "\n";
+            result += "\t" + each.getMovie().getTitle() + "\t" + String.valueOf(each.getCharge()) + "\n";
             totalAmount += each.getCharge();
         }
 
@@ -58,8 +57,7 @@ public class Customer {
             <b>frequentRenterPoints += each.getFrequentRenterPoints();</b>
 
             //show figures for this rental
-            result += "\t" + each.getMovie().getTitle() + "\t" +
-                    String.valueOf(each.getCharge()) + "\n";
+            result += "\t" + each.getMovie().getTitle() + "\t" + String.valueOf(each.getCharge()) + "\n";
             totalAmount += each.getCharge();
         }
 

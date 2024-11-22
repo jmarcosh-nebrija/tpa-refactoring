@@ -1,8 +1,8 @@
 ## Refactor 04: Variable thisAmount es redundante...
 
 La variable thisAmount es el resultado de each.getCharge() y no se modifica en ningún caso.
-Se puede aplicar el refactor **Replace Temp with Query** (Reemplazar temporal con consulta)  que permite cambiar la variable por 
-la llamada al código directamente.
+Se puede aplicar fácilmente el refactor **Replace Temp with Query** (Reemplazar temporal con consulta) que 
+permite cambiar la variable por la llamada al código directamente.
 
 ### Se pide
 
@@ -23,12 +23,11 @@ Usar Replace Temp with Query (Reemplazar temporal con consulta) con la variable 
             frequentRenterPoints++;
 
             // add bonus for a two day new release rental
-            if ((each.getMovie().getPriceCode() == Movie.NEW_RELEASE)
-                    && each.getDaysRented() > 1) frequentRenterPoints++;
+            if ((each.getMovie().getPriceCode() == Movie.NEW_RELEASE) && each.getDaysRented() > 1) 
+                frequentRenterPoints++;
 
             //show figures for this rental
-            result += "\t" + each.getMovie().getTitle() + "\t" +
-                    String.valueOf(<b>thisAmount</b>) + "\n";
+            result += "\t" + each.getMovie().getTitle() + "\t" + String.valueOf(<b>thisAmount</b>) + "\n";
             totalAmount += <b>thisAmount</b>;
         }
 
@@ -54,12 +53,11 @@ public String statement() {
         frequentRenterPoints++;
 
         // add bonus for a two day new release rental
-        if ((each.getMovie().getPriceCode() == Movie.NEW_RELEASE)
-                && each.getDaysRented() > 1) frequentRenterPoints++;
+        if ((each.getMovie().getPriceCode() == Movie.NEW_RELEASE) && each.getDaysRented() > 1) 
+            frequentRenterPoints++;
 
         //show figures for this rental
-        result += "\t" + each.getMovie().getTitle() + "\t" +
-                String.valueOf(<b>each.getCharge()</b>) + "\n";
+        result += "\t" + each.getMovie().getTitle() + "\t" + String.valueOf(<b>each.getCharge()</b>) + "\n";
         totalAmount += <b>each.getCharge()</b>;
     }
 
