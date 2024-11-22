@@ -2,7 +2,7 @@
 
 ## Punto de partida
 
-Las clases dentro del paquete start.store son las clases que vamos a usar como punto de partida. Su diseño deja mucho
+Las clases dentro del paquete nebrija.tpa.video_store son las clases que vamos a usar como punto de partida. Su diseño deja mucho
 que desear. Esto no sería un problema si no hubiera que hacer cambios, pero... el codigo cambia!
 
 ### El código cambia
